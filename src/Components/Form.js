@@ -1,3 +1,10 @@
+/*I tried using the information from conditional rendering to complete this.
+After viewing the solution I can see now that the extra functions were not
+necessary and putting the ternary operator directly after the div on the form
+requires a lot less and also updates to make the error go away once the names
+and passwords meet the right conditions. I decided to leave this as is since it
+is what I originally wrote.*/
+
 import React, { useState } from 'react';
 
 const Form = () => {
@@ -55,13 +62,15 @@ const Form = () => {
                 <label>First Name</label>
                 <input type="text" 
                 name="firstName" 
-                onChange={ handleFirstName } />
-                {
+                // onChange={ (e) => setFirstName(e.target.value) }/>
+                onChange={ handleFirstName }/>
+                
+            </div>
+            {
                     firstNameError ?
                     <p>{ firstNameError }</p> :
                     ''
-                }
-            </div>
+                } 
             <div>
                 <label>Last Name</label>
                 <input type="text" 
